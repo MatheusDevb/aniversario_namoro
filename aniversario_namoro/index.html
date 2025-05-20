@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feliz 2 Anos & Aniversário!</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@300;400;600&display=swap"
+    />
+  </head>
+  <body>
+    <!-- Tela inicial com presente -->
+    <div id="gift-screen" class="screen active">
+      <div id="gift" class="pulse">
+        <img src="img/gift.png" alt="Presente" />
+      </div>
+      <div class="hint">Clique no presente para abrir</div>
+    </div>
+
+    <!-- Tela de senha -->
+    <div id="password-screen" class="screen">
+      <div class="password-container">
+        <h2>Digite a senha para desbloquear</h2>
+        <input type="password" id="password-input" maxlength="6" />
+        <button id="submit-password">Desbloquear</button>
+        <p id="password-error" class="error"></p>
+      </div>
+    </div>
+
+    <!-- Conteúdo principal (desbloqueado após senha) -->
+    <div id="content-screen" class="screen">
+      <header>
+        <h1>Feliz Aniversário & 2 Anos de Namoro!</h1>
+        <p class="subtitle">
+          Dois anos de amor, carinho e momentos inesquecíveis
+        </p>
+      </header>
+
+      <section class="parallax-section">
+        <div
+          class="parallax-bg"
+          style="background-image: url('img/nos.jpg')"
+        ></div>
+        <div class="content">
+          <h2>Um dos primeiros Barzinhos</h2>
+          <p>
+            Lembra daquele dia? Foi uma noite muito gostosa, cheia de novidades,
+            recém morando juntos!
+          </p>
+        </div>
+      </section>
+
+      <section class="parallax-section">
+        <div
+          class="parallax-bg"
+          style="background-image: url('img/nos3.jpg')"
+        ></div>
+        <div class="content">
+          <h2>Momentos Inesquecíveis</h2>
+          <p>
+            Cada momento ao seu lado é um tesouro que guardo com carinho. Nossas
+            viagens, nossos passeios, nossas risadas... Tudo isso construiu uma
+            história linda que continua a crescer a cada dia.
+          </p>
+        </div>
+      </section>
+
+      <section class="parallax-section">
+        <div
+          class="parallax-bg"
+          style="background-image: url('img/nos6.jpg')"
+        ></div>
+        <div class="content">
+          <h2>Momentos Inesquecíveis 2</h2>
+          <p>
+            Um dos presentes mais legais que já ganhei, um dos melhores shows
+            que eu já fui se não o melhor! "If you ain't here, I just can't
+            breathe".
+          </p>
+        </div>
+      </section>
+
+      <section class="parallax-section">
+        <div
+          class="parallax-bg"
+          style="background-image: url('img/nos7.jpg')"
+        ></div>
+        <div class="content">
+          <h2>Momentos Inesquecíveis 3</h2>
+          <p>
+            E esse dia então?? Tinha tudo para dar errado, nosso começo já não
+            foi dos melhores. Mas no final tudo deu certo, você campeã do
+            feminino e nós em terceiro na mista!
+          </p>
+        </div>
+      </section>
+
+      <section class="parallax-section">
+        <div
+          class="parallax-bg"
+          style="background-image: url('img/nos4.jpg')"
+        ></div>
+        <div class="content">
+          <h2>Superando Desafios</h2>
+          <p>
+            Nem tudo foi fácil, mas juntos superamos cada obstáculo. Nossa força
+            está na união, no apoio mútuo e no amor que sentimos um pelo outro.
+            Cada desafio só nos tornou mais fortes.
+          </p>
+        </div>
+      </section>
+
+      <section class="parallax-section">
+        <div
+          class="parallax-bg"
+          style="background-image: url('img/nos5.jpg')"
+        ></div>
+        <div class="content">
+          <h2>Dois Anos de Amor</h2>
+          <p>
+            Hoje celebramos dois anos de uma jornada incrível. Dois anos de
+            crescimento, aprendizado e muito amor. E o melhor de tudo é saber
+            que ainda temos muito pela frente.
+          </p>
+        </div>
+      </section>
+
+      <section class="parallax-section">
+        <div
+          class="parallax-bg"
+          style="background-image: url('img/nos8.jpg')"
+        ></div>
+        <div class="content">
+          <h2>Nossa Familia</h2>
+          <p>
+            Não podia falta essa foto também, toda vez que vejo ela eu lembro
+            como foi dificil quando o Joca chegou. Mas depois de um tempinho
+            todo mundo se entendeu e hoje somos uma familia feliz!
+          </p>
+        </div>
+      </section>
+
+      <div class="button-container">
+        <button id="surprise-button" class="pulse-button">
+          Clique para uma surpresa especial!
+        </button>
+      </div>
+    </div>
+
+    <!-- Tela de carrossel e música -->
+    <div id="carousel-screen" class="screen">
+      <div class="carousel-container">
+        <div class="carousel">
+          <!-- As imagens serão adicionadas via JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Tela de fogos de artifício -->
+    <div id="fireworks-screen" class="screen">
+      <canvas id="fireworks-canvas"></canvas>
+    </div>
+
+    <!-- Áudios -->
+    <audio id="initial-song" preload="auto">
+      <source src="audio/love_story.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="main-song" preload="auto">
+      <source src="audio/parabens.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

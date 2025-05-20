@@ -1,0 +1,381 @@
+/* Estilos Gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background: linear-gradient(135deg, #ffebee, #ffffff, #f8bbd0);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  color: #333;
+  overflow-x: hidden;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Dancing Script", cursive;
+  color: #e91e63;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+/* Telas */
+.screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.screen.active {
+  display: flex;
+}
+
+/* Tela do Presente */
+#gift-screen {
+  flex-direction: column;
+  background: radial-gradient(circle, #f8f6f6, #e61232);
+}
+
+#gift {
+  width: 400px;
+  height: 400px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#gift img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 90px;
+}
+
+.pulse {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hint {
+  margin-top: 2rem;
+  font-size: 2.5rem;
+  color: #e91e63;
+  font-family: "Dancing Script", cursive;
+  animation: fadeInOut 2s infinite;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+/* Tela de Senha */
+#password-screen {
+  background: radial-gradient(circle, #f8f6f6, #e61232);
+}
+
+.password-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(233, 30, 99, 0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+#password-input {
+  width: 100%;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  border: 2px solid #f8bbd0;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  text-align: center;
+  letter-spacing: 5px;
+  transition: border-color 0.3s;
+}
+
+#password-input:focus {
+  outline: none;
+  border-color: #e91e63;
+}
+
+#submit-password {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(233, 30, 99, 0.3);
+}
+
+#submit-password:hover {
+  background-color: #c2185b;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(233, 30, 99, 0.4);
+}
+
+.error {
+  color: #f44336;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  min-height: 20px;
+}
+
+/* Conteúdo Principal */
+#content-screen {
+  /* Removido display: block para evitar sobrescrever a regra .screen */
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+#content-screen.active {
+  display: block; /* Quando ativo, usa display block em vez de flex para permitir rolagem */
+}
+
+header {
+  text-align: center;
+  padding: 5rem 1rem;
+  background-color: #fff;
+  background: radial-gradient(circle, #f8f6f6, #f04861a4);
+}
+
+/* Seções Parallax */
+.parallax-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.parallax-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(2px);
+  z-index: -1;
+}
+
+.content {
+  background-color: rgba(255, 255, 255, 0.103);
+  padding: 2rem;
+  border-radius: 15px;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  color: white;
+  text-shadow: black 0.1em 0.1em 0.2em;
+  font-size: 1.5em;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.content h2 {
+  font-size: 2em;
+}
+/* Botão de Surpresa */
+.button-container {
+  text-align: center;
+  padding: 5rem 1rem;
+  background-color: #fff;
+  background: radial-gradient(circle, #f8f6f6, #f04861a4);
+}
+
+.pulse-button {
+  background-color: #e91e63;
+  color: white;
+  border: none;
+  padding: 1.2rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(233, 30, 99, 0.3);
+  animation: pulse 1.5s infinite;
+}
+
+.pulse-button:hover {
+  background-color: #c2185b;
+  animation: none;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(233, 30, 99, 0.4);
+}
+
+/* Tela de Carrossel */
+#carousel-screen {
+  background-color: #000;
+}
+
+.carousel-container {
+  width: 95vw;
+  height: 95vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel {
+  width: 80%;
+  height: 80%;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.carousel img.active {
+  opacity: 1;
+}
+
+/* Tela de Fogos de Artifício */
+#fireworks-screen {
+  background-color: #000;
+}
+
+#fireworks-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* Animação de shake para o input de senha */
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}
+
+.shake {
+  animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .parallax-section {
+    height: 80vh;
+  }
+
+  .content {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  #gift {
+    width: 150px;
+    height: 150px;
+  }
+
+  .pulse-button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
