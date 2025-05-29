@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
       mainSong
         .play()
         .catch((e) => console.log("Erro ao tocar música principal:", e));
-    }, 10000);
+    }, 15000);
 
     // Iniciar carrossel
     let currentSlide = 0;
